@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background-color: #0f172a;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen px-4">
+    <div class="bg-gray-800 rounded-lg p-6 sm:p-8 w-full max-w-4xl">
+        <nav class="flex flex-wrap justify-between items-center mb-6">
+            <div class="text-white text-lg font-bold">Resume.</div>
+            <ul class="hidden md:flex space-x-6 text-white">
+                <li><a href="{%  url 'index'%}" class="hover:text-cyan-400">Home</a></li>
+                <li><a href="{% url  'resume' %}" class="hover:text-cyan-400">Resume</a></li>
+               <li><a href="{% url  'certificate' %}" class="hover:text-cyan-400">Certificate</a></li>
+                <li><a href="#" class="hover:text-cyan-400">Project</a></li>
+                <li><a href="{% url  'contact' %}" class="hover:text-cyan-400">Contact</a></li>
+            </ul>
+            <button class="md:hidden text-cyan-400 text-xl" id="menu-toggle"><i class="fas fa-bars"></i></button>
+        </nav>
+        <ul id="mobile-menu" class="hidden flex-col space-y-4 text-center text-white md:hidden">
+            <li><a href="{%  url 'index'%}" class="hover:text-cyan-400">Home</a></li>
+            <li><a href="{% url  'resume' %}" class="hover:text-cyan-400">Resume</a></li>
+               <li><a href="{% url  'certificate' %}" class="hover:text-cyan-400">Certificate</a></li>
+                <li><a href="#" class="hover:text-cyan-400">Project</a></li>
+                <li><a href="{% url  'contact' %}" class="hover:text-cyan-400">Contact</a></li>
+        </ul>
+        <div class="mt-6">
+            <h1 class="text-4xl font-bold mb-4 text-center">My Resume</h1>
+            <div class="bg-gray-700 rounded-lg p-6">
+                <h2 class="text-2xl font-bold text-cyan-400 mb-2">Education</h2>
+                <p class="text-gray-300 mb-4">Master's in Data Science - Mumbai University (2024 - 2026)</p>
+                <p class="text-gray-300">Bachelor's in Information Technology - Ramniranjan Jhunjhunwala College (2021 - 2024)</p>
+            </div>
+            <div class="bg-gray-700 rounded-lg p-6 mt-4">
+                <h2 class="text-2xl font-bold text-cyan-400 mb-2">Experience</h2>
+                <p class="text-gray-300">Data Analyst Intern - Excelerate (October 2024 - November 2024)</p>
+            </div>
+            <div class="bg-gray-700 rounded-lg p-6 mt-4">
+                <h2 class="text-2xl font-bold text-cyan-400 mb-2">Skills</h2>
+                <ul class="list-disc list-inside text-gray-300">
+                    <li>HTML, CSS, JavaScript </li>
+                    <li>Python, Django</li>
+                    <li>Data Analysis, Machine Learning,Data Visualization</li>
+                    <li>SQL, Power Bi ,Tableau</li>
+                </ul>
+            </div>
+            <div class="text-center mt-6">
+                <a href="#" class="inline-block bg-cyan-400 text-gray-800 font-bold py-2 px-4 rounded-full">Download Resume</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

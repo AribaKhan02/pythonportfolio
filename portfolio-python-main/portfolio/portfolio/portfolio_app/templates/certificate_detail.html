@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certificate Details</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <style>
+        body {
+            background-color: #0f172a;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+    <div class="bg-gray-800 rounded-lg p-8 w-full max-w-3xl text-center">
+        <h1 class="text-4xl font-bold mb-4">Certificate Details</h1>
+
+        {% if certificate.certificate_file %}
+            <p class="text-lg text-gray-300 mb-4">Title: <span class="text-cyan-400">{{ certificate.title }}</span></p>
+            <img src="{{ certificate.certificate_file.url }}" alt="Certificate Image" class="w-full max-w-md mx-auto rounded-lg shadow-lg mb-4">
+            <!--...<div class="mt-4">
+                <a href="{{ certificates.certificate_file.url }}" target="_blank" class="bg-cyan-400 text-gray-800 font-bold py-2 px-4 rounded-full hover:bg-cyan-300 transition">
+                    View Full Certificate
+                </a>
+            </div> -->
+        {% else %}
+            <p class="text-red-400 text-lg">No certificate available.</p>
+        {% endif %}
+
+        <div class="mt-6">
+            <a href="{% url 'certificate' %}" class="text-cyan-400 hover:underline">Back to Certificates</a>
+        </div>
+    </div>
+</body>
+</html>
