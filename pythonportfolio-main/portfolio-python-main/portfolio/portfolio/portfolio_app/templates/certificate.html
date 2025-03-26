@@ -1,31 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Certificates</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
-    <style>
-        body {
-            background-color: #0f172a;
-            color: #fff;
-            font-family: 'Arial', sans-serif;
-        }
-    </style>
-</head>
-<body class="flex items-center justify-center min-h-screen">
-    <div class="bg-gray-800 rounded-lg p-6 w-full max-w-3xl text-center">
 
-        <!-- Back to Home Button -->
-        <div class="text-left">
-            <a href="{% url 'index' %}" class="bg-gray-600 text-white font-bold py-2 px-4 rounded-full hover:bg-gray-500 transition">
-                ⬅ Back to Home
-            </a>
-        </div>
+{% extends "base.html" %}
 
-        <h1 class="text-4xl font-bold mb-6 mt-4">Certificates</h1>
 
+{% block content %}
+
+<div class="text-center px-4">
+    <h1 class="text-4xl font-bold">
+        <span class="text-White">MY</span> <span class="text-cyan-500">CERTIFICATES</span>
+    </h1>
         <!-- Upload Certificate Form (Smaller Size) -->
         <div class="bg-gray-700 rounded-lg p-4 mb-6 w-3/4 mx-auto">
             <h2 class="text-xl font-bold text-cyan-400 mb-3">Upload Certificate</h2>
@@ -88,5 +70,5 @@
             {% endif %}
         </div>
     </div>
-</body>
-</html>
+{% endblock %}
+

@@ -1,5 +1,6 @@
 from django.db import models
-
+from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 class Certificate(models.Model):
     title = models.CharField(max_length=255)
     issuer = models.CharField(max_length=255)
@@ -28,3 +29,11 @@ class ContactMessage(models.Model):
     def __str__(self):
         return f"Message from {self.name} - {self.email}"
 
+class BlogPost(models.Model):
+    title = models.CharField(max_length=255)
+    description = RichTextUploadingField()
+    image = models.ImageField(upload_to='blogimage/')
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.title

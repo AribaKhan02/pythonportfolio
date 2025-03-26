@@ -9,7 +9,8 @@ urlpatterns = [
     path('download_resume/', views.download_resume, name='download_resume'),  # New URL for downloading CV
     path('certificate/delete/<int:id>/', views.delete_certificate, name='delete_certificate'),
     path('certificate/upload/', views.upload_certificate, name='upload_certificate'),
-
+    path('blog/<title>/',views.blog_detail,name='blog_detail'),
+    path('blog/',views.blog,name='blog'),
 ]
 from django.conf import settings
 from django.conf.urls.static import static

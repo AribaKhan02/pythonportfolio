@@ -72,3 +72,10 @@ def contact(request):
             messages.error(request, "All fields are required!")  # If any field is empty
 
     return render(request, 'contact.html')
+def blog(request):
+    blogs=BlogPost.objects.all()
+    return render(request,'blog.html',{'blogs':blogs,})
+
+def blog_detail(request,title):
+    blog=get_object_or_404(BlogPost,title=title)
+    return render(request,'blog_detail.html',{'blog':blog})
